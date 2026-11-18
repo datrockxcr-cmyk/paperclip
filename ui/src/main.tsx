@@ -37,6 +37,7 @@ import { adoptHardLoadChatBootstrap } from "./lib/issue-chat-bootstrap";
 import { hasPendingWrites, subscribePendingWrites } from "./lib/reload-safety";
 import "@mdxeditor/editor/style.css";
 import "./index.css";
+import "./thesis-theme.css";
 
 initPluginBridge(React, ReactDOM);
 

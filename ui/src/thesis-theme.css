@@ -1,0 +1,67 @@
+/* Thesis Team look (from ~/Desktop/Research/project_team/tools/dashboard.html):
+   flat dark panels, 1px hairlines, 4px radius, no shadows, color only for status.
+   Kept in its own file and imported after index.css so upstream merges don't conflict. */
+
+:root,
+.coordinator-workspace {
+  --radius: 4px;
+  --radius-task-composer: 4px;
+  --coordinator-card-radius: 4px;
+  --coordinator-card-shadow: none;
+  --coordinator-composer-shadow: none;
+  --font-paper-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+:root,
+body {
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang TC", "Noto Sans TC", ui-sans-serif, sans-serif;
+}
+
+/* .coordinator-workspace and the design-proposal scope redefine surfaces; match their specificity. */
+.dark,
+.dark .coordinator-workspace,
+html.dark:has(.design-proposal-theme) {
+  --background: #111214;
+  --background-alt: #0d0e10;
+  --foreground: #e4e5e7;
+  --card: #17181b;
+  --card-foreground: #e4e5e7;
+  --popover: #17181b;
+  --popover-foreground: #e4e5e7;
+  --primary: #e4e5e7;
+  --primary-foreground: #111214;
+  --secondary: #1d1e22;
+  --secondary-foreground: #e4e5e7;
+  --muted: #1d1e22;
+  --muted-highlight: #24262a;
+  --muted-foreground: #8d9099;
+  --accent: #1d1e22;
+  --accent-foreground: #e4e5e7;
+  --destructive: #e06c6c;
+  --border: #2a2c31;
+  --input: #2a2c31;
+  --ring: #8d9099;
+  --sidebar: #17181b;
+  --sidebar-foreground: #e4e5e7;
+  --sidebar-primary: #e4e5e7;
+  --sidebar-primary-foreground: #111214;
+  --sidebar-accent: #1d1e22;
+  --sidebar-accent-foreground: #e4e5e7;
+  --sidebar-border: #2a2c31;
+  --sidebar-ring: #8d9099;
+  --side-panel-fg: #e4e5e7;
+  --bubble-agent: #17181b;
+  --scrollbar-thumb: #2a2c31;
+  --scrollbar-thumb-hover: #61646c;
+  /* status = the only color */
+  --status-task-icon-todo: #e0a54a;
+  --status-task-icon-in_progress: #d7d9de;
+  --status-task-icon-done: #6fbf73;
+  --patch-add-fg: #6fbf73;
+  --patch-remove-fg: #e06c6c;
+}
+
+/* No drop shadows (focus rings use a separate color var and stay). */
+.dark * {
+  --tw-shadow-color: transparent;
+}
